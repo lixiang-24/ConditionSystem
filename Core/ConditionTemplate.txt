@@ -1,0 +1,12 @@
+namespace ConditionSystem
+{
+    public class {{CONDITION_NAME}}: ConditionBase
+    {
+        public {{CONDITION_NAME}}(){}
+        public {{CONDITION_NAME}}(int id) : base(id)
+    	{
+    		
+    	}
+    }
+}
+
