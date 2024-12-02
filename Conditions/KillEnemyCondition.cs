@@ -13,6 +13,12 @@ namespace ConditionSystem
             base.Init();
             maxValue = ParamList[0];
         }
+
+        protected override void OnConditionReached()
+        {
+            base.OnConditionReached();
+            Console.WriteLine("Kill Enemy Condition Reached!");
+        }
     }
 }
 

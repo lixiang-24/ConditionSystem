@@ -19,6 +19,12 @@ namespace ConditionSystem
             base.Init();
             maxValue = ParamList[0];
         }
+
+        protected override void OnConditionReached()
+        {
+            base.OnConditionReached();
+            Console.WriteLine("HoldMoney Condition Reached!");
+        }
     }
 }
 

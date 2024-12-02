@@ -59,6 +59,7 @@ namespace ConditionSystem
                 if (IsReachCondition)
                 {
                     Status = ConditionStatus.Succeed;
+                    OnConditionReached();
                 }
             }
         }
@@ -84,6 +85,11 @@ namespace ConditionSystem
         public int CompareTo(ConditionBase other)
         {
             return Order.CompareTo(other.Order);
+        }
+        
+        protected virtual void OnConditionReached()
+        {
+            
         }
     }
 }
