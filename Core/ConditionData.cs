@@ -46,15 +46,17 @@ namespace ConditionSystem
             }
             return null;
         }
-        
+
         /// <summary>
         /// 生成新条件
         /// </summary>
         /// <param name="type">条件类型</param>
+        /// <param name="order">触发优先级(同一类型的条件同时触发时order越小越先触发)</param>
         /// <returns>条件实例</returns>
-        public ConditionBase AddNewCondition(ConditionType type)
+        public ConditionBase AddNewCondition(ConditionType type,int order = 0)
         {
             var newCondition = ConditionFactory.GetCondition(type);
+            newCondition.Order = order;
             if (Conditions.TryGetValue(type, out var conditionList))
             {
                 conditionList.Add(newCondition);
